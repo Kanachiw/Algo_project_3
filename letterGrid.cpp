@@ -82,7 +82,7 @@ void LetterGrid::printLetters(){
     {
       for (int j = 0; j < GridSizeCol; j++)
 	    {
-
+      
            cout<<ltgMatrix[i][j]<<" "; 
 		}
         cout<<endl; 

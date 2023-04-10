@@ -19,6 +19,7 @@ void wordSearch(){
         cin>>filename; 
 
         LetterGrid grid(filename); 
+        //grid.printLetters(); 
         
 
         /*read the data from input files for the grid and glossary, */
