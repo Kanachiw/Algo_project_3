@@ -10,17 +10,33 @@
 
 
 /*
-Implement a class called LetterGrid that reads the letters in the grid from a file and stores them in a matrix.
-     (a) Also provide a function for this class that can print out the n x n grid of letters read from the file
-
-   NOTE: The above two classes can have additional helper functions where necessary.
+class called LetterGrid that reads the letters in the grid from a file and stores them in a matrix.
 */
 class LetterGrid{
     private:
-    matrix<string> ltgMatrix; 
+    matrix<char> ltgMatrix; 
+    int GridSizeRow; //Grid size row count
+    int GridSizeCol; // Grid size column count
+
+    /* private helper funtion to ensure the grid is cleared before i add new letters*/
+    void clearLetters(); 
+
+    /*privat helper funtion to create the grid */ 
+    void initializeGrid(ifstream &fin); 
+  
     public: 
+
+
+    /*read letters into a grid 
+    @param n is the filename of the input file*/
+    LetterGrid(string filename); 
+
+    /*prints the letters of the grid */
+    void printLetters(); 
+=======
     LetterGrid(string filename); 
     void printletters(); 
+
 }; 
 
 #include "letterGrid.cpp"

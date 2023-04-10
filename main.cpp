@@ -18,6 +18,10 @@ void wordSearch(){
         cout<< "Enter a input filename to read from: "; 
         cin>>filename; 
 
+        LetterGrid grid(filename); 
+        //grid.printLetters(); 
+        
+
         /*read the data from input files for the grid and glossary, */
 
 
@@ -28,3 +32,7 @@ void wordSearch(){
 
 
     }
+int main(){
+    
+    wordSearch(); 
+}
