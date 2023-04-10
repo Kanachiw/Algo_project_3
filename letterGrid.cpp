@@ -73,7 +73,7 @@ for (int i = 0; i < GridSizeRow; i++)
 	       
 		}
     }
-    
+     
 }
 void LetterGrid::printLetters(){
 
