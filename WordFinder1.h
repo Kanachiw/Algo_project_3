@@ -1,25 +1,19 @@
-#include <iostream>
-#include <fstream>
-#include <iomanip>
-#include "sort_algorithms.h"
-#include "d_matrix.h"
-#ifndef WORD_FINDER
-#define WORD_FINDER
-using namespace std; 
 
-/* class WordFinder that reads words from glossary file and stores them in a vector*/
-class WordFinder {
-  private:
-    string words; 
-    vector<string> glossary; 
+#ifndef _wordsFinder 
+#define _wordsFinder
 
-  public:
-    WordFinder(string w = "Unknown");
-    void readFile(); 
-    void sort();
-    int binarySearch(vector<string> glossary, const string& target);
-    friend ostream& operator << (ostream& out, WordFinder& wordList);
-};
 
-#include "WordFinder1.cpp"
+class WordFinder
+{
+    private: 
+    vector<string> words; 
+
+    public: 
+    void readwords(); 
+    friend ostream& operator<<(ostream& out, const WordFinder &wordList);
+    string retrieveword(const string& target); 
+
+}; 
+
+#include "wordFinder.cpp"
 #endif
