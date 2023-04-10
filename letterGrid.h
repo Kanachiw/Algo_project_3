@@ -19,6 +19,7 @@ class LetterGrid{
     private:
     matrix<string> ltgMatrix; 
     public: 
+    LetterGrid(string filename); 
     void printletters(); 
 }; 
 
