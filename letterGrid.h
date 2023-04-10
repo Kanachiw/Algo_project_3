@@ -26,12 +26,17 @@ class LetterGrid{
   
     public: 
 
+
     /*read letters into a grid 
     @param n is the filename of the input file*/
     LetterGrid(string filename); 
 
     /*prints the letters of the grid */
     void printLetters(); 
+=======
+    LetterGrid(string filename); 
+    void printletters(); 
+
 }; 
 
 #include "letterGrid.cpp"
