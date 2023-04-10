@@ -9,9 +9,9 @@ class WordFinder
     vector<string> words; 
 
     public: 
-    void readwords(string filename); 
+    void readwords(); 
     friend ostream& operator<<(ostream& out, const WordFinder &wordList);
-    string retrieveword(const WordFinder &wordList); 
+    string retrieveword(const string& target); 
 
 }; 
 
