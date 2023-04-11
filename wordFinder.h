@@ -1,4 +1,3 @@
-
 #ifndef _wordsFinder 
 #define _wordsFinder
 
@@ -21,4 +20,4 @@ class WordFinder
 }; 
 
 #include "wordFinder.cpp"
-#endif 
+#endif
