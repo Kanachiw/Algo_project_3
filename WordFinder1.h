@@ -15,7 +15,9 @@ class WordFinder {
   public:
     WordFinder();
     void readWords(); 
-    void sort();
+    void sSort();
+    void qSort();
+    void hSort();
     bool retrieveWord(const string& target);
     friend ostream& operator << (ostream& out, WordFinder& wordList);
 };

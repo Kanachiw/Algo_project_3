@@ -11,8 +11,16 @@ WordFinder::WordFinder() {
   
 }
 //function using selection sort to sort thru glossary vector words
-void WordFinder::sort() {
+void WordFinder::sSort() {
   selectionSort(words);
+}
+//function using quick sort to sort thru glossary vector words
+void WordFinder::qSort() {
+    quickSort(words, 0, words.size() -1); 
+}
+//function using heap sort to sort thru glossary vector words 
+void WordFinder::hSort() {
+    heapSort(words); 
 }
 //function to read glossary file and store words in a vector
 void WordFinder::readWords() {
