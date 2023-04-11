@@ -7,16 +7,17 @@
 
 
 
-WordFinder::WordFinder(string w) : words(w) {
+WordFinder::WordFinder() {
   
 }
 //function using selection sort to sort thru glossary vector words
 void WordFinder::sort() {
-  selectionSort(glossary);
+  selectionSort(words);
 }
 //function to read glossary file and store words in a vector
 void WordFinder::readFile() {
-  vector<string> glossary; 
+  vector<string> words; 
+  string word;
   ifstream fin;
     string fileName = "Glossary.txt";
       fin.open(fileName.c_str());
@@ -24,23 +25,23 @@ void WordFinder::readFile() {
         cerr << "Cannot open 'Glossary.txt'" << endl; 
           exit(1);
       }        
-      while (fin >> words) {
-        glossary.push_back(words); //use matrix class to store in a vector
+      while (fin >> word) {
+        words.push_back(word); //use matrix class to store in a vector
       }
       fin.close();
 }
 //binary search algorithm to search for words in glossary vector
-int WordFinder::binarySearch(vector<string> glossary, const string& target) {
+int WordFinder::retrieveWord(vector<string> &v, const string& target) {
   int low = 0; 
-  int high = glossary.size(); 
+  int high = v.size(); 
 
   while (low <= high) {
     int mid = (low + high) / 2; 
 
-    if (glossary[mid] == target) {
+    if (v[mid] == target) {
       return mid;
     }
-    else if (glossary[mid] < target) {
+    else if (v[mid] < target) {
       low = mid + 1; 
     }
     else {
@@ -51,6 +52,6 @@ int WordFinder::binarySearch(vector<string> glossary, const string& target) {
 }
 //overloaded ostream operator to output list of words in glossary vector
 ostream& operator << (ostream& out, WordFinder& wordList) {
-  out << wordList.words << endl; 
+  out << wordList << endl; 
   return out;
 }

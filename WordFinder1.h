@@ -10,14 +10,13 @@ using namespace std;
 /* class WordFinder that reads words from glossary file and stores them in a vector*/
 class WordFinder {
   private:
-    string words; 
-    vector<string> glossary; 
+    vector<string> words; 
 
   public:
-    WordFinder(string w = "Unknown");
-    void readFile(); 
+    WordFinder();
+    void readWords(); 
     void sort();
-    int binarySearch(vector<string> glossary, const string& target);
+    int retrieveWord(const vector <string> &v, const string& target);
     friend ostream& operator << (ostream& out, WordFinder& wordList);
 };
 
