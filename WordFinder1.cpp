@@ -15,7 +15,7 @@ void WordFinder::sort() {
   selectionSort(words);
 }
 //function to read glossary file and store words in a vector
-void WordFinder::readFile() {
+void WordFinder::readWords() {
   vector<string> words; 
   string word;
   ifstream fin;
@@ -31,7 +31,7 @@ void WordFinder::readFile() {
       fin.close();
 }
 //binary search algorithm to search for words in glossary vector
-int WordFinder::retrieveWord(vector<string> &v, const string& target) {
+int WordFinder::retrieveWord(const vector<string> &v, const string& target) {
   int low = 0; 
   int high = v.size(); 
 
