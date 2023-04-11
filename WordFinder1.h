@@ -16,7 +16,7 @@ class WordFinder {
     WordFinder();
     void readWords(); 
     void sort();
-    int retrieveWord(const vector <string> &v, const string& target);
+    bool retrieveWord(const string& target);
     friend ostream& operator << (ostream& out, WordFinder& wordList);
 };
 

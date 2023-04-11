@@ -25,30 +25,29 @@ void WordFinder::readWords() {
         cerr << "Cannot open 'Glossary.txt'" << endl; 
           exit(1);
       }        
-      while (fin >> word) {
+      while (getline(fin, word)) {
         words.push_back(word); //use matrix class to store in a vector
       }
       fin.close();
 }
 //binary search algorithm to search for words in glossary vector
-int WordFinder::retrieveWord(const vector<string> &v, const string& target) {
+bool WordFinder::retrieveWord(const string& target) { 
   int low = 0; 
-  int high = v.size(); 
-
+  string word;
+  int high = words.size() - 1; 
   while (low <= high) {
     int mid = (low + high) / 2; 
-
-    if (v[mid] == target) {
-      return mid;
+    if (words[mid] == word) {
+      return true;
     }
-    else if (v[mid] < target) {
+    else if (words[mid] < word) {
       low = mid + 1; 
     }
-    else {
-      high = mid - 1; 
-    }
+    else { 
+    high = mid - 1; 
+    } 
   }
-  return -1; 
+  return false;   
 }
 //overloaded ostream operator to output list of words in glossary vector
 ostream& operator << (ostream& out, WordFinder& wordList) {
