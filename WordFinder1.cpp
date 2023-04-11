@@ -14,6 +14,7 @@ WordFinder::WordFinder() {
 void WordFinder::sort() {
   selectionSort(words);
 }
+
 //function to read glossary file and store words in a vector
 void WordFinder::readWords() {
   vector<string> words; 
