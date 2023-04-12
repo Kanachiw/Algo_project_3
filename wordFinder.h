@@ -1,23 +1,22 @@
+
 #ifndef _wordsFinder 
 #define _wordsFinder
+#include <vector> 
+#include <string> 
+#include <iostream>
+using namespace std; 
 
-
-class WordFinder
-{
-    private: 
+class WordFinder {
+  private:
     vector<string> words; 
+    void readWords(string filename); 
+    void sort();
 
-    public: 
-
-    void readwords(); 
-    
+  public:
     WordFinder();
-    void readwords(string filename); 
-
-    friend ostream& operator<<(ostream& out, const WordFinder &wordList);
-    string retrieveword(const string& target); 
-
-}; 
+    bool retrieveWords(const string& target); 
+    friend ostream& operator << (ostream& out, WordFinder& wordList);
+};
 
 #include "wordFinder.cpp"
 #endif
