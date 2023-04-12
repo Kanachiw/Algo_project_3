@@ -13,7 +13,8 @@ void matchWords(WordFinder wfd, LetterGrid ltg) {
   //gridsizerow is private
   int rows = ltg.getRowSize();
   int cols = ltg.getColSize();
-  int x, y; 
+  int x=0;
+  int y = 0; 
 
   // Loop over every cell in the grid 
   for (int i = 0; i < rows; i++) {
@@ -22,8 +23,8 @@ void matchWords(WordFinder wfd, LetterGrid ltg) {
     for (int dx = -1; dx <= 1; dx++) {
       for (int dy = -1; dy <= 1; dy++) {
         // Skip the direction (0, 0) because that's the current cell
-        int x = i;
-        int y = j;
+        x = i;
+        y = j;
         if (dx == 0 && dy == 0) {
           continue;
         }
@@ -52,7 +53,7 @@ void matchWords(WordFinder wfd, LetterGrid ltg) {
             break;
           }
           // Check if the current word is in the glossary
-          if (word.size() >= 5 && wfd.retrieveWords(word)) {
+          if (word.size() >= 5 && wfd.retrieveWord(word)) {
             cout << "Found: pos_x(" << x << "), pos_y(" << y << ") - " << word << endl;
           }
         }
