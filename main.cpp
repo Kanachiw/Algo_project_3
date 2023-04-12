@@ -5,6 +5,13 @@
 using namespace std;
 
 void matchWords(WordFinder wfd, LetterGrid ltg){
+    
+    
+    string a; 
+     cout<< "the word zoogeographic is: " ; 
+     (wfd.retrieveWords("zoogeographer"))? a="found": a="notfound"; 
+     cout<<a; 
+
 
     /* write code here */
 
@@ -33,6 +40,7 @@ void wordSearch(){
 
     }
 int main(){
-    
-    wordSearch(); 
+WordFinder wfd; 
+LetterGrid ltg("input15.txt"); 
+ matchWords(wfd, ltg);
 }
