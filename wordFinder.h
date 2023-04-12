@@ -10,10 +10,15 @@ class WordFinder {
   private:
     vector<string> words; 
     void readWords(string filename); 
-    void sort();
+    void SelectionSort();
+    void QuickSort();
+    void HeapSort();
+   
 
   public:
+    
     WordFinder();
+    string sort(int sortType); 
     bool retrieveWords(const string& target); 
     friend ostream& operator << (ostream& out, WordFinder& wordList);
 };

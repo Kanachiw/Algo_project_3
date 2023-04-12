@@ -9,14 +9,46 @@
 using namespace std; 
  
 
-
 WordFinder::WordFinder() {
   string filename = "Glossary.txt";
   readWords(filename); 
-  sort(); 
+
+
 }
-//function using selection sort to sort thru glossary vector words
-void WordFinder::sort() {
+string WordFinder::sort(int sortType){
+
+  //determine the type of sorting algorithm to use. 
+     switch (sortType)
+    {
+    case 1:
+      SelectionSort(); 
+      return "Selection Sort";
+      break;
+    case 2:
+      QuickSort(); 
+      return "Quick Sort"; 
+      break;
+    case 3: 
+      HeapSort(); 
+      return "Heap Sort"; 
+      break; 
+
+    default:
+      sortType=0; 
+      exit(1); 
+      break;
+
+    }
+}
+
+
+void WordFinder::HeapSort(){
+  heapSort(words); 
+}
+void WordFinder::QuickSort(){
+  quickSort(words, 0,words.size()); 
+}
+void WordFinder::SelectionSort() {
   selectionSort(words);
 }
 

@@ -1,17 +1,13 @@
 #include <iostream> 
 #include <string> 
+#include <ctime>
 #include "letterGrid.h"
 #include "wordFinder.h"
 using namespace std;
+ 
 
 void matchWords(WordFinder wfd, LetterGrid ltg){
     
-    
-    string a; 
-     cout<< "the word zoogeographic is: " ; 
-     (wfd.retrieveWords("zoogeographer"))? a="found": a="notfound"; 
-     cout<<a; 
-
 
     /* write code here */
 
@@ -22,25 +18,45 @@ void matchWords(WordFinder wfd, LetterGrid ltg){
 void wordSearch(){
         string filename; 
         /* (1) asks the user to input and reads the name of the grid file from the keyboard (e.g., input15.txt, input30.txt, or input50.txt)*/
-        cout<< "Enter a input filename to read from: "; 
+        cout<< "Enter a input filename to read from (e.g input15.txt): "; 
         cin>>filename; 
 
-        LetterGrid grid(filename); 
-        //grid.printLetters(); 
-        
+        /* (2) read the data from input files for the grid and glossary,
+        (3) sorts the glossary vector using SelectionSort, and*/
 
-        /*read the data from input files for the grid and glossary, */
+        LetterGrid ltg(filename); //reads the data from input file into the letter grid 
+       
+       int sortType; 
+       int i=0;
+        do {
 
+        if (i>0) {
+            cout<<"Sorry that wasn't an option, Try again!"<<endl;
+        }
 
-        /*sorts the glossary vector using SelectionSort*/
+        cout<<"Choose number of the sorting method you would like to use\n"
+            <<"[1] Selection Sort\n"
+            <<"[2] Quick Sort\n"
+            <<"[3] Heap Sort\n"
+            <<"Enter option: "; 
+        cin>> sortType; 
+       }
+       while (sortType<=1 || sortType >=3); 
 
-
-        /*prints out candidate words from the grid that can be found in the glossary by calling the matchWords() function.*/
-
-
+        WordFinder wfd; 
+        string typeW = wfd.sort(sortType); //reads the data from glossary into a wordfinder vector and sorts it using a sorting algorithm 
+        cout<< "using " <<typeW <<" to sort the list..."<<endl;
+        matchWords(wfd, ltg); //calls match words which prints out the candidate functions 
     }
 int main(){
-WordFinder wfd; 
-LetterGrid ltg("input15.txt"); 
- matchWords(wfd, ltg);
+    srand (time(NULL)); 
+    time_t start, finish;  
+    time(&start);  
+
+    wordSearch(); 
+
+    time(&finish); 
+    cout<<endl; 
+
+    cout << "Time required to sort= " << difftime(finish, start) << " seconds";
 }
