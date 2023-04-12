@@ -13,8 +13,8 @@ void matchWords(WordFinder wfd, LetterGrid ltg) {
   //gridsizerow is private
   int rows = ltg.getRowSize();
   int cols = ltg.getColSize();
-  cout << rows; 
-  cout << cols; 
+  int x, y; 
+
   // Loop over every cell in the grid 
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < cols; j++) {
@@ -27,7 +27,7 @@ void matchWords(WordFinder wfd, LetterGrid ltg) {
         if (dx == 0 && dy == 0) {
           continue;
         }
-        
+        word = " "; 
         // Start building the word by moving in the current direction
         while (true) {
           //need to figure out a way to get indices from ltg matrix
