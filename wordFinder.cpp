@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstdlib>
 #include "wordFinder.h"
 #include "sort_algorithms.h"
 #include <fstream>
@@ -24,7 +25,7 @@ void WordFinder::sort() {
 void WordFinder::readWords(string filename) {
     string word;
     ifstream fin; 
-    fin.open(filename);
+    fin.open(filename.c_str());
 
     if (!fin)
     {

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string> 
+#include <cstdlib>
 #include "d_matrix.h"
 #include <fstream>
 using namespace std;  
@@ -14,7 +15,7 @@ LetterGrid::LetterGrid(string filename)
 
 ifstream fin;
 //opening the file 
-fin.open(filename);
+fin.open(filename.c_str());
 if (!fin)
 
 {
