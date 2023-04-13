@@ -28,10 +28,17 @@ class LetterGrid{
 
     /*read letters into a grid 
     @param n is the filename of the input file*/
-    LetterGrid(string filename); 
+    LetterGrid(const string &filename); 
 
     /*prints the letters of the grid */
     void printLetters(); 
+
+
+int getRowSize();
+int getColSize();
+
+int getLetter(const int &x, const int &y); 
+
 }; 
 
 #include "letterGrid.cpp"

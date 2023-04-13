@@ -10,7 +10,7 @@ char ch;
 int row,col; 
 
 /*reads the letters in the grid from a file and stores them in a matrix*/ 
-LetterGrid::LetterGrid(string filename)
+LetterGrid::LetterGrid(const string &filename)
 {
 
 ifstream fin;
@@ -83,12 +83,23 @@ void LetterGrid::printLetters(){
     {
       for (int j = 0; j < GridSizeCol; j++)
 	    {
-      
            cout<<ltgMatrix[i][j]<<" "; 
 		}
         cout<<endl; 
     }
-    
 }
+int LetterGrid::getRowSize(){
+  return GridSizeRow;
+}
+
+int LetterGrid::getColSize() {
+  return GridSizeCol; 
+}
+
+int LetterGrid::getLetter(const int &x, const int &y) {
+  return ltgMatrix [x][y]; 
+}
+
+
 
 
