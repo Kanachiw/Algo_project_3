@@ -3,6 +3,8 @@
 #include <ctime>
 #include "letterGrid.h"
 #include "wordFinder.h"
+#include <stdlib.h>
+#include <iomanip>
 using namespace std;
  
 

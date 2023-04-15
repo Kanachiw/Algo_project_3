@@ -5,6 +5,7 @@
 #include "wordFinder.h"
 #include "sort_algorithms.h"
 #include <fstream>
+#include <stdlib.h>
 #include <iomanip>
 using namespace std; 
  
@@ -56,7 +57,7 @@ void WordFinder::SelectionSort() {
 void WordFinder::readWords(string filename) {
     string word;
     ifstream fin; 
-    fin.open(filename);
+    fin.open(filename.c_str());
 
     if (!fin)
     {
