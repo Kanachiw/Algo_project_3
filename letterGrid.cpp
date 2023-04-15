@@ -88,14 +88,17 @@ void LetterGrid::printLetters(){
         cout<<endl; 
     }
 }
+//retrieved the row size 
 int LetterGrid::getRowSize(){
   return GridSizeRow;
 }
 
+//retrives the column size 
 int LetterGrid::getColSize() {
   return GridSizeCol; 
 }
 
+//retrieve the specific letter at a point 
 int LetterGrid::getLetter(const int &x, const int &y) {
   return ltgMatrix [x][y]; 
 }

@@ -102,13 +102,16 @@ int main(){
     char key; 
 
    do{
-
+    //check the time for each run 
     srand (time(NULL)); 
-    time_t start, finish;  
+    time_t start, finish; 
+    //starting the timmer  
     time(&start);  
-
+    
+    //calling wordserach 
     wordSearch(); 
 
+    //finishing the timer 
     time(&finish); 
     cout<<endl; 
 
@@ -117,8 +120,6 @@ int main(){
     cin>>key;  
    }
    while (key !='1');
-   {
-    /* code */
-   }
+  
    
 }

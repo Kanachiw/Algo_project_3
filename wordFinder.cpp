@@ -9,13 +9,15 @@
 #include <iomanip>
 using namespace std; 
  
-
+//the constructor function 
 WordFinder::WordFinder() {
   string filename = "Glossary.txt";
   readWords(filename); 
 
 
 }
+
+//determines what sorting algorithm to use 
 string WordFinder::sort(int sortType){
 
   //determine the type of sorting algorithm to use. 
@@ -42,13 +44,16 @@ string WordFinder::sort(int sortType){
     }
 }
 
-
+// calls a heap sort 
 void WordFinder::HeapSort(){
   heapSort(words); 
 }
+
+//calls a quick sort 
 void WordFinder::QuickSort(){
   quickSort(words, 0,words.size()); 
 }
+//calls a selection sort 
 void WordFinder::SelectionSort() {
   selectionSort(words);
 }
