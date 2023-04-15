@@ -1,7 +1,7 @@
 /****************************************************************************
 * author          : EECE 2560 Kanachi Weli and Rajani Tabor 
 * Date            : April 14th, 2023
-* File name       : SodukoBoard.cpp  - Word Search solver 
+* File name       :  - Word Search solver 
 *				  : sorting algorithms and binary serach trees.
 * Purpose         : Reads word search  and solves them
 * Usage			  :  Makefile required 
@@ -99,7 +99,7 @@ void wordSearch(){
             <<"Enter option: "; 
         cin>> sortType; 
        }
-       while (sortType<=1 || sortType >=3); 
+       while (sortType<1 || sortType >3); 
 
         WordFinder wfd; 
         string typeW = wfd.sort(sortType); //reads the data from glossary into a wordfinder vector and sorts it using a sorting algorithm 

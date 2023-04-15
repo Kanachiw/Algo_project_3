@@ -1,4 +1,11 @@
-main: search.o 
-	g++ -g -Wall -o main search.o
-search.o: main.cpp wordFinder.h wordFinder.cpp sort_algorithms.h letterGrid.h letterGrid.cpp d_matrix.h Glossary.txt input15.txt input30.txt input50.txt
-	g++ -g -Wall -c main.cpp wordFinder.cpp letterGrid.cpp
+
+main: main.o wordFinder.h wordFinder.h
+	g++ main.o -o main 
+
+
+main.o: main.cpp wordFinder.h wordFinder.h 
+	g++ -c main.cpp
+
+
+clean:
+	rm *.o main 
