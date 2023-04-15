@@ -1,3 +1,11 @@
+/****************************************************************************
+* author          : EECE 2560 Kanachi Weli and Rajani Tabor 
+* Date            : April 14th, 2023
+* File name       : SodukoBoard.cpp  - Word Search solver 
+*				  : sorting algorithms and binary serach trees.
+* Purpose         : Reads word search  and solves them
+* Usage			  :  Makefile required 
+ ****************************************************************************/
 #include <iostream> 
 #include <string> 
 #include <ctime>
